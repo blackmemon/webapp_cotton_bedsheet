@@ -1,7 +1,7 @@
 <title>blackmemon Cotton</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap">
 <style>
 /* Layout concept: large editorial type on black / white / deep navy bands; bedsheets drawn as top-down SVG plans; one airflow animation as the signature moment. */
 :root{
@@ -10,8 +10,8 @@
   --accent:#D9430F; --accent-fg:#ffffff; --ok:#2f6b4a; --err:#b3263f;
   --rose:#E3E6EA; --blush:#E3E6EA; --lilac:#e6d9f3; --mint:#d6ecdf; --sky:#d4e6f7; --peach:#fbdcc8;
   --ease:cubic-bezier(.22,1,.36,1); --morph:.5s;
-  --font:'Pragati Narrow','Arial Narrow',Arial,sans-serif;
-  --serif:'Newsreader','Iowan Old Style',Georgia,serif;
+  --font:'Poppins',Arial,sans-serif;
+  --serif:'Poppins',Arial,sans-serif;
   --gut:max(16px,env(safe-area-inset-left,0px));
   --gutr:max(16px,env(safe-area-inset-right,0px));
   color-scheme:light;
@@ -571,7 +571,7 @@ footer.site *{min-width:0}footer.site .nl{flex-wrap:nowrap}footer.site .nl butto
 @media(max-width:560px){.sl-i{flex-basis:72vw}}
 
 /* ===== palette: cool grey, ink, orange, dark brown ===== */
-:root{--hot:#FF5A1F;--hot-d:#D9430F;--hot-soft:#FFE1D3;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--sans2:"Inter",system-ui,sans-serif;--serif2:"Newsreader",Georgia,serif}
+:root{--hot:#FF5A1F;--hot-d:#D9430F;--hot-soft:#FFE1D3;--mono:"Poppins",Arial,sans-serif;--sans2:"Poppins",Arial,sans-serif;--serif2:"Poppins",Arial,sans-serif}
 #progress{background:var(--hot)}
 .sheet{display:none!important}
 body.nav-open{overflow:hidden}
@@ -842,11 +842,11 @@ function bedSVG(p,hex,view="top"){
     const f2=solid?base:`url(#${id})`;
     return `<svg viewBox="0 0 400 340" role="img" aria-label="${esc(p.name)} folded bedsheets"><defs>${pat}</defs><rect width="400" height="340" fill="none"/><ellipse cx="200" cy="300" rx="150" ry="14" fill="#000" opacity=".12"/>
     ${[0,1,2,3].map(i=>{const y=250-i*44;return `<g><rect x="${70+i*6}" y="${y}" width="${260-i*12}" height="40" rx="6" fill="${fill}" stroke="${edge}" stroke-width="2"/><path d="M${70+i*6} ${y+30}h${260-i*12}" stroke="${edge}" stroke-width="1" opacity=".5"/></g>`}).join("")}
-    <rect x="${88}" y="64" width="224" height="30" rx="6" fill="#D9430F"/><text x="200" y="85" text-anchor="middle" fill="#fff" font-family="Pragati Narrow,Arial Narrow,sans-serif" font-weight="700" font-size="17" letter-spacing="3">100% COTTON</text></svg>`}
+    <rect x="${88}" y="64" width="224" height="30" rx="6" fill="#D9430F"/><text x="200" y="85" text-anchor="middle" fill="#fff" font-family="Poppins,Arial,sans-serif" font-weight="700" font-size="17" letter-spacing="3">100% COTTON</text></svg>`}
   if(view==="weave"){
     const w=hex;const tone=solid?hex:"#f4f6fa";const th=lum(tone)<.5?"#ffffff":"#0a0d16";
     let lines="";for(let i=0;i<22;i++){const o=i*18;lines+=`<path d="M${o} 0v400" stroke="${shade(tone,-.18)}" stroke-width="7" opacity=".55"/><path d="M0 ${o}h400" stroke="${shade(tone,.2)}" stroke-width="7" opacity=".9"/>`}
-    return `<svg viewBox="0 0 400 380" role="img" aria-label="Close up of the ${esc(p.weave)} weave"><defs><clipPath id="${id}c"><circle cx="200" cy="190" r="170"/></clipPath>${pat}</defs><rect width="400" height="380" fill="none"/><g clip-path="url(#${id}c)"><rect width="400" height="380" fill="${solid?tone:fill}"/>${solid?"":`<rect width="400" height="380" fill="url(#${id})"/>`}<g transform="rotate(45 200 190)">${lines}</g></g><circle cx="200" cy="190" r="170" fill="none" stroke="currentColor" stroke-width="2" opacity=".5"/><text x="200" y="372" text-anchor="middle" font-family="Pragati Narrow,Arial Narrow,sans-serif" font-size="17" letter-spacing="3" fill="currentColor">${esc(p.weave.toUpperCase())} WEAVE / ${p.tc} THREAD COUNT</text></svg>`}
+    return `<svg viewBox="0 0 400 380" role="img" aria-label="Close up of the ${esc(p.weave)} weave"><defs><clipPath id="${id}c"><circle cx="200" cy="190" r="170"/></clipPath>${pat}</defs><rect width="400" height="380" fill="none"/><g clip-path="url(#${id}c)"><rect width="400" height="380" fill="${solid?tone:fill}"/>${solid?"":`<rect width="400" height="380" fill="url(#${id})"/>`}<g transform="rotate(45 200 190)">${lines}</g></g><circle cx="200" cy="190" r="170" fill="none" stroke="currentColor" stroke-width="2" opacity=".5"/><text x="200" y="372" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="17" letter-spacing="3" fill="currentColor">${esc(p.weave.toUpperCase())} WEAVE / ${p.tc} THREAD COUNT</text></svg>`}
   return `<svg viewBox="0 0 400 340" role="img" aria-label="${esc(p.name)} bedsheet in ${esc(hex)}"><defs>${pat}</defs>
   <rect x="38" y="14" width="324" height="40" rx="4" fill="#C4C9CF"/>
   <rect x="30" y="50" width="340" height="276" rx="6" fill="#000" opacity=".1" transform="translate(5 7)"/>
@@ -1104,7 +1104,7 @@ function demoHTML(mode){
   const dots=[0,1,2,3].map(i=>`<circle class="dot ${cot?"":"b"}" cx="${70+0}" cy="${64+i*30}" r="6" fill="#c0392b" style="animation-delay:${-i*.6}s"/>`).join("");
   const wv=cot?`<g stroke="currentColor" stroke-width="3" fill="none">${[0,1,2,3,4].map(i=>`<path d="M${140} ${50+i*28}h50" stroke-dasharray="14 12"/>`).join("")}</g>`:`<rect x="150" y="40" width="30" height="150" fill="currentColor" opacity=".85"/>`;
   return `<div class="tabs" role="group" aria-label="Fabric type"><button data-demo="cotton" aria-pressed="${cot}">100% cotton</button><button data-demo="poly" aria-pressed="${!cot}">Polyester blend</button></div>
-  <svg viewBox="0 0 400 210" role="img" aria-label="Illustration of warm air ${cot?"passing through cotton":"blocked by a polyester blend"}"><text x="10" y="24" font-size="16" fill="currentColor" letter-spacing="2" font-family="Pragati Narrow,Arial Narrow,sans-serif">BODY HEAT</text><text x="390" y="24" text-anchor="end" font-size="16" fill="currentColor" letter-spacing="2" font-family="Pragati Narrow,Arial Narrow,sans-serif">ROOM AIR</text>${wv}<g>${dots}</g></svg>
+  <svg viewBox="0 0 400 210" role="img" aria-label="Illustration of warm air ${cot?"passing through cotton":"blocked by a polyester blend"}"><text x="10" y="24" font-size="16" fill="currentColor" letter-spacing="2" font-family="Poppins,Arial,sans-serif">BODY HEAT</text><text x="390" y="24" text-anchor="end" font-size="16" fill="currentColor" letter-spacing="2" font-family="Poppins,Arial,sans-serif">ROOM AIR</text>${wv}<g>${dots}</g></svg>
   <p class="cap">${cot?"Warm air and moisture pass through the open cotton weave, so you stay comfortable.":"A tight synthetic surface holds heat and moisture close to your skin."} <small style="color:var(--muted)">Simple illustration.</small></p>`}
 
 V.shop=(f)=>{
